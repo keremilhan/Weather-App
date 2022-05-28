@@ -1,5 +1,5 @@
 let weather = {
-    apiKey: "8fd372a2a8e20a86c2e50cbc97e57005",
+    apiKey: "UNIQUE API KEY GOES HERE",
     fetchWeather: function(city){
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`)
         .then((response) => response.json())
@@ -14,8 +14,8 @@ let weather = {
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = temp + " °C";
-        document.querySelector(".humidity").innerHTML = `<span style="color: red;">Humidity: </span> ${humidity}%`;
-        document.querySelector(".wind").innerHTML = `<span style="color: red;">Wind Speed: </span> ${speed} km/h`;
+        document.querySelector(".humidity").innerHTML = `<span>Humidity: </span> ${humidity}%`;
+        document.querySelector(".wind").innerHTML = `<span>Wind Speed: </span> ${speed} km/h`;
         document.querySelector(".weather").classList.remove("loading");
         document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')";
     },
@@ -34,4 +34,4 @@ document.querySelector(".search-bar").addEventListener("keyup", function(event) 
     }
 });
 
-weather.fetchWeather("Denver")
+weather.fetchWeather("Istanbul")
